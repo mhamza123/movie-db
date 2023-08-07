@@ -1,0 +1,52 @@
+.home {
+    background: linear-gradient( rgb(25, 22, 28), rgb(78, 75, 43));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.browseMovies {
+    margin: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.favourite {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient( rgb(66, 64, 44), rgb(38, 39, 43));
+    border-radius: 10px;
+
+    margin: 30px;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.favourite h2 {
+    margin: 0; /* Remove default margin for the heading */
+    text-decoration: none; /* Remove the underline from the link */
+    text-align: justify;
+    color: #efef83;
+  }
+
+@media screen and (max-width: 768px) {
+    .home {
+        background: linear-gradient( rgb(25, 22, 28), rgb(78, 75, 43));
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .browseMovies {
+        margin: 30px;
+        overflow: hidden;
+    }
+}  

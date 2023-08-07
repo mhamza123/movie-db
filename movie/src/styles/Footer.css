@@ -1,0 +1,122 @@
+/* Footer.css */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 40px;
+  }
+
+  .footer-copyrights-big {
+    background-color: #29252B;
+    color: #e6e583;
+    padding: 0px;
+    border-top: 1px solid #fffd6b;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-left-container{
+    display: flex;
+    margin: 20px;
+    width: fit-content;
+
+  }
+
+  .footer-heading-logo {
+    display: flex;
+  }
+
+  .footer-heading-logo h2{
+    margin-left: 20px;
+    font-size:26px;
+    display: grid;
+    align-content: center;
+  }
+
+
+  .footer-info-logo {
+    justify-self: unset;
+    width: fit-content;
+  }
+  
+  .footer-info,
+  .footer-contact,
+  .footer-social,
+  .footer-copyright {
+    margin-bottom: 2px;
+  }
+
+  .footer-container p{
+    margin-bottom: 2px;
+    color: rgb(249, 249, 228);
+  }
+  
+  .footer-info h2,
+  .footer-contact h2,
+  .footer-social h2{
+    font-size: 18px;
+  }
+  
+  .footer-copyright p {
+    display: grid;
+    font-size: 16px;
+    margin-bottom: 2px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .social-icons a {
+    color: #f5ff6b;
+    font-size: 30px;
+
+  }
+
+  .footer-logo img{
+    width: 80px;
+    height: fit-content;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 20px;
+      }
+    .footer-left-container{
+        width: 50%;
+        padding-left: 20px;
+      }
+    
+      .footer-info-logo {
+        width: 50%;
+      }
+
+      .footer-heading-logo h2{
+        margin: 5px;
+        font-size:large;
+        display: grid;
+        align-content: center;
+      }
+
+      .footer-logo img{
+        width: 100px;
+        height: fit-content;
+      }
+
+      .footer-left-container{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-left: 20px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 60px;
+      }
+  }

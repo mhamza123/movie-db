@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(33, 4, 42);
+    border-bottom: 1px solid #d70000;
+  }
+  .links {
+    font-size: large;
+    padding-inline: 20px;
+    color: #ffffff;
+  }
+
+  .userinfo {
+    font-size: large;
+    padding-inline: 20px;
+    margin-left: auto;
+    color: #ffffff;
+  }
+  .navbar a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+    color: #ffffff;
+  }
+  .navbar a:hover {
+    color: #ffffff;
+  }

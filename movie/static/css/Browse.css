@@ -1,0 +1,44 @@
+.movies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient( rgb(214, 16, 16), rgb(149, 12, 64));
+  }
+  
+  /* Styles for each movie preview */
+  .movie-preview {
+    display: flex;
+    gap: 20px;
+    color:#d1d1d1;
+  }
+  
+  .movie-preview img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+  /* Styles for the movie details */
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styles for the movie title */
+  .movie-details h2 {
+    margin: 0; /* Remove default margin for the heading */
+    text-decoration: none; /* Remove the underline from the link */
+  }
+
+  .movie-preview a{
+    text-decoration: none;
+    color: #d1d1d1;
+  }
+  
+  /* Styles for the movie description, release, and duration */
+  .movie-details p {
+    margin: 0; 
+    color: #d1d1d1;
+  }
+  

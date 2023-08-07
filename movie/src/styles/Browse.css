@@ -1,0 +1,53 @@
+.movies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient( rgb(66, 64, 44), rgb(38, 39, 43));
+    border-radius: 10px;
+  }
+  
+  .movie-preview {
+    display: flex;
+    gap: 20px;
+    color:#d1d1d1;
+  }
+  
+  .movie-preview img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+  /* Styles for the movie title */
+  .info h2 {
+    margin: 0; /* Remove default margin for the heading */
+    text-decoration: none; /* Remove the underline from the link */
+    text-align: justify;
+    color: #efef83;
+  }
+
+  .info {
+    margin-right: 10px;
+    color: #fffccf;
+  }
+
+  .info a{
+    text-decoration: none;
+  }
+  
+  .info p {
+    text-size-adjust: 10px;
+  }
+  
+
+
+ 
+  @media screen and (max-width: 768px) {
+
+    .movie-preview img {
+      width: 100px; 
+      height: auto; 
+      border-radius: 8px; 
+    }
+  }  

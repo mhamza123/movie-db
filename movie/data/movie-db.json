@@ -1,0 +1,75 @@
+{
+  "movie": [
+    {
+      "name": "The Godfather",
+      "Description": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
+      "release": "1972",
+      "duration": "2h 55min",
+      "img": "/movie-img/the-god-father.png",
+      "id": 1
+    }, 
+    {
+      "name": "The Shawshank Redemption",
+      "Description": "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+      "release": "1994",
+      "duration": "2h 22min",
+      "img": "/movie-img/the-shawshank.png",
+      "id": 2
+    }, 
+    {
+      "name": "The Dark Knight",
+      "Description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "release": "2008",
+      "duration": "2h 32min",
+      "img": "/movie-img/the-dark-knight.png",
+      "id": 3
+    },
+    {
+      "name": "Oppenheimer",
+      "Description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+      "release": "2023",
+      "duration": "3h",
+      "img": "/movie-img/oppenheimer.png",
+      "id": 4
+    },
+    {
+      "name": "Barbie",
+      "Description": "Barbie suffers a crisis that leads her to question her world and her existence.",
+      "release": "2023",
+      "duration": "1h 54m",
+      "img": "/movie-img/barbie.png",
+      "id": 5
+    }
+  ],
+
+  "users":[
+    {
+      "username": "me",
+      "password": "p"
+    },
+    {
+      "username": "mehak",
+      "password": "mehak"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "text": "Very amazing and intresting movie about the italian mafia",
+      "star": 5,
+      "username": "mehak"
+    },
+    {
+      "id": 2,
+      "text": "Just amazing and intresting movie about the italian mafia",
+      "star": 3,
+      "username": "Hello"
+    },
+    {
+      "id": 2,
+      "text": "BLA amazing and intresting movie about the italian mafia",
+      "star": 3,
+      "username": "me"
+    }
+  ]
+}
