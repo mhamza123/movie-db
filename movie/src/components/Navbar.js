@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../styles/Navbar.css";
 import useFetch from "./useFetch";
@@ -7,12 +7,40 @@ const Navbar = ({ username }) => {
   const firstLetter = username ? username.charAt(0).toUpperCase() : "";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [movies, setMovies] = useState([]); // State to store the list of movies
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const history = useHistory();
+ 
+  const { error, isPending, data: moviesData } = useFetch('http://localhost:8000/backend/api/movies');
 
+  useEffect(() => {
+    fetch('http://localhost:8000/backend/api/movies/')
+      .then(response => {
+        if (!response.ok) {
+          throw Error('Could not fetch the data for movies...');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setMovies(data);
+        setIsPending(false);
+      })
+      .catch(error => {
+        setError(error.message);
+        setIsPending(false);
+      });
+    }, []);
+    
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    if (moviesData) {
+      setMovies(moviesData);
+    }
+  }, [moviesData]);
+
 
   const handleLogout = () => {
     fetch('http://localhost:8000/backend/api/logout/', {
@@ -34,20 +62,14 @@ const Navbar = ({ username }) => {
       });
   };
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-    fetchSearchSuggestions(e.target.value);
-  };
-
-  const fetchSearchSuggestions = (query) => {
-    // Implement your logic to fetch search suggestions from the backend API
-    // For example:
-    // fetch(`http://localhost:8000/search/suggestions?query=${query}`)
-    //   .then((response) => response.json())
-    //   .then((data) => setSearchSuggestions(data));
-    // Replace the above code with your actual API call to get search suggestions.
-    // It's important to debounce the API call to avoid making too many requests in a short time.
-  };
+const handleSearch = (e) => {
+  setSearchQuery(e.target.value);
+  const query = e.target.value.toLowerCase();
+  const matchingSuggestions = movies.filter(movie =>
+    movie.name.toLowerCase().includes(query)
+  );
+  setSearchSuggestions(matchingSuggestions.map(movie => movie.name));
+};
 
   return (
     <nav className="navbar">
@@ -63,13 +85,24 @@ const Navbar = ({ username }) => {
      
       <div className="userinfo">
         <div className="search-bar">
-          <input type="text" placeholder="Search Movies" value={searchQuery} onChange={handleSearch} />
-          <datalist id="searchSuggestions">
-            {searchSuggestions.map((suggestion) => (
-              <option key={suggestion} value={suggestion} />
-            ))}
-          </datalist>
-          <button>Search</button>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            history.push(`/search/${searchQuery}`);
+          }}>
+            <input
+              type="text"
+              placeholder="Search Movies"
+              value={searchQuery}
+              onChange={handleSearch}
+              list="searchSuggestions"
+            />
+            <datalist id="searchSuggestions">
+              {searchSuggestions.map((suggestion) => (
+                <option key={suggestion} value={suggestion} />
+              ))}
+            </datalist>
+            <button onClick={() => history.push(`/search/${searchQuery}`)}>Search</button>
+          </form>
         </div>
         <Link to={`/update-profile/${username}`}>{username}</Link>
         <div className="profile-circle">{firstLetter}</div>

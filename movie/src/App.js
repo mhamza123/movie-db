@@ -8,7 +8,8 @@ import AllMovies from './components/AllMovies.js';
 import Movie from './components/Movie.js';
 import AddReview from './components/AddReview.js';
 import Footer from './components/Footer.js';
-import AddMovieForm from './components/AddMovie.js';
+import AddMovie from './components/AddMovie.js';
+import Search from './components/Search.js';
 import '../static/css/App.css'
 
 export default class App extends Component {
@@ -59,7 +60,8 @@ export default class App extends Component {
                 <Route exact path="/browse" > <AllMovies/> </Route>
                 <Route exact path="/movie/:movie_id/add-review"><AddReview username= {username}/></Route>
                 <Route exact path="/movie/:id"><Movie></Movie></Route>
-                <Route exact path="/add-movie"><AddMovieForm onMovieAdded={this.handleMovieAdded} /></Route>
+                <Route path="/add-movie" component={AddMovie} />
+                <Route exact path="/search/:query"><Search></Search></Route>
                 <Footer />
 
               </div>

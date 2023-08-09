@@ -201,3 +201,5 @@ def add_movie(request):
         # return JsonResponse({'message': 'Movie added successfully!', 'movie_id': movie.id}, status=201)
 
     return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+

@@ -2,6 +2,7 @@
 
 from django.urls import path
 from . import views
+from .api import ScrapeMovieDetails
 
 urlpatterns = [
     path('api/movies/', views.movie_list, name='movie-list'),
@@ -14,4 +15,5 @@ urlpatterns = [
     path('api/movies/<int:movie_id>/add-reviews/', views.create_review, name='create_review'),
     path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/add-movie/', views.add_movie, name='add_movie'),
+    path('api/scrape-movie/', ScrapeMovieDetails.as_view(), name='scrape-movie'),
 ]
