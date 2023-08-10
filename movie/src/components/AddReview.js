@@ -96,7 +96,7 @@ const AddReview = ({ username }) => {
               required
             />
           </div>
-          <button type="submit">Submit Review</button> {/* Corrected the type */}
+          <button type="submit">Submit Review</button> 
         </form>
       </div>
     </div>

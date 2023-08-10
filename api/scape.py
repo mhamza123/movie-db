@@ -75,6 +75,15 @@ if url:
         current_directory = os.path.dirname(os.path.abspath(__file__))
         image_full_path = os.path.join(current_directory, image_path)
 
+        #image_path = r'C:\Users\Tk-LPT-0481\Desktop\Music App\New\api\movie-img\ + image_filename + .jpg'
+
+        # Extract the directory path from the image path
+        directory = os.path.dirname(image_full_path)
+
+        # Create the directory if it doesn't exist
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
         with open(image_full_path, 'wb') as image_file:
             image_file.write(image_content)
 
@@ -84,6 +93,7 @@ if url:
         print(ratingtag.text)
         print(durationtag.text[-6:])
         print(durationtag.text[len(title.text):len(title.text) + 4])
+        print('Now waiting for download...')
         print(f"Image saved as: {image_path}")
    
 else:

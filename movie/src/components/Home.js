@@ -29,13 +29,15 @@ const Home = () => {
   
   return (
     <div className="home">
+      <div className="welcome">
+        <h1>Welcome to HahaHollywood</h1>
+        <p>Here you can review and search your favourite movies.</p>
+        <p>Enjoy!</p>
+      </div>
       <div className="browseMovies">
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
         { movies && <Browse movies={movies} staticUrl={staticUrl} /> }
-      </div>
-      <div className="favourite">
-        <h2>Favourites</h2>
       </div>
     </div>
   );

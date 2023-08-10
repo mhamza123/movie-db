@@ -8,7 +8,9 @@ const Browse = ({ movies, staticUrl }) => {
       {movies.map(movie => (
         <div className="movie-preview" key={movie.id} >
           <div className="image">
+          <Link to={`/movie/${movie.id}`}>
           <img src={`/static${movie.img}`} alt={movie.title} />
+          </Link>
           </div>
           <div className="info">
 

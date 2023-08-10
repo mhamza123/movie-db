@@ -10,11 +10,10 @@ import AddReview from './components/AddReview.js';
 import Footer from './components/Footer.js';
 import AddMovie from './components/AddMovie.js';
 import Search from './components/Search.js';
+import About from './components/About.js';
 import '../static/css/App.css'
 
 export default class App extends Component {
-
-  
   constructor(props) {
       super(props);
       this.state = {
@@ -34,7 +33,6 @@ export default class App extends Component {
   };
 
   handleMovieAdded = (movie) => {
-    // Perform any actions you need after adding the movie, e.g., update the movie list
     console.log('Movie added:', movie);
   };
     
@@ -49,8 +47,7 @@ export default class App extends Component {
                   {username ? <Redirect to="/home" /> : <Redirect to="/login" />}
                 </Route>
               <Route exact path="/login">
-                {
-                <Login onLogin={this.updateUsername}/>}
+                <Login onLogin={this.updateUsername}/>
               </Route>
               <div>
                 <Navbar username={username} />
@@ -62,6 +59,7 @@ export default class App extends Component {
                 <Route exact path="/movie/:id"><Movie></Movie></Route>
                 <Route path="/add-movie" component={AddMovie} />
                 <Route exact path="/search/:query"><Search></Search></Route>
+                <Route exact path="/about"><About/></Route>
                 <Footer />
 
               </div>

@@ -7,39 +7,38 @@ const Navbar = ({ username }) => {
   const firstLetter = username ? username.charAt(0).toUpperCase() : "";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [movies, setMovies] = useState([]); // State to store the list of movies
+  const [movies, setMovies] = useState([]);
   const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const [error, setError] = useState(null);
   const history = useHistory();
- 
-  const { error, isPending, data: moviesData } = useFetch('http://localhost:8000/backend/api/movies');
 
   useEffect(() => {
     fetch('http://localhost:8000/backend/api/movies/')
       .then(response => {
-        if (!response.ok) {
-          throw Error('Could not fetch the data for movies...');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setMovies(data);
-        setIsPending(false);
-      })
-      .catch(error => {
-        setError(error.message);
-        setIsPending(false);
-      });
-    }, []);
+          if (!response.ok) {
+            throw Error('Could not fetch the data for movies...');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setMovies(data);
+          setIsPending(false);
+        })
+        .catch(error => {
+          setError(error.message);
+          setIsPending(false);
+        });
+  }, []);
     
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
-    if (moviesData) {
-      setMovies(moviesData);
+    if (movies.length) {
+      setMovies(movies);
     }
-  }, [moviesData]);
+  }, [movies]);
 
 
   const handleLogout = () => {
@@ -88,6 +87,7 @@ const handleSearch = (e) => {
         <form onSubmit={(e) => {
             e.preventDefault();
             history.push(`/search/${searchQuery}`);
+            setSearchQuery("");
           }}>
             <input
               type="text"
@@ -101,7 +101,7 @@ const handleSearch = (e) => {
                 <option key={suggestion} value={suggestion} />
               ))}
             </datalist>
-            <button onClick={() => history.push(`/search/${searchQuery}`)}>Search</button>
+            <button type="submit">Search</button>
           </form>
         </div>
         <Link to={`/update-profile/${username}`}>{username}</Link>

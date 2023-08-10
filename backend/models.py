@@ -15,6 +15,7 @@ class Movie(models.Model):
 class User(models.Model):
     username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
+    favorites = models.ManyToManyField(Movie, related_name='favorited_by')
 
 class Reviews(models.Model):
     # id = models.PositiveIntegerField(primary_key=True)

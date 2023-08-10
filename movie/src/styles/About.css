@@ -1,0 +1,55 @@
+/* About.css */
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient( rgb(66, 64, 44), rgb(38, 39, 43));
+    margin: 20px;
+  }
+  
+  .about-content {
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 30px;
+  }
+  
+  .about-content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(244, 242, 132);
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fffccf;
+    margin-bottom: 20px;
+  }
+  
+  .social-media-icons_ div{
+    display: grid;
+    align-items: center;
+  }
+  
+  .social-media-icons_ a {
+    margin-right: 10px;
+  }
+  
+  .social-media-icons_ img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-content span {
+    margin-right: 20px;
+    color: bisque;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    .about-content {
+      width: 90%;
+    }
+  }
+  
